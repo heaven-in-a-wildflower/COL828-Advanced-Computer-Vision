@@ -1,0 +1,47 @@
+CoOp: 50 epochs,lr=2e-3
+  Top-1 Accuracy: 0.3500
+  F1-Score (Macro): 0.2906
+  F1-Score (Weighted): 0.2906
+  AUC-ROC: 0.8319
+
+CoOp: 50 epochs, lr=1e-3, sgd, cosine-annealing
+  Top-1 Accuracy: 0.4278
+  F1-Score (Macro): 0.3647
+  F1-Score (Weighted): 0.3647
+  AUC-ROC: 0.8723
+
+CoCoOp: 50 epochs,lr=2e-3
+  Top-1 Accuracy: 0.3778
+  F1-Score (Macro): 0.3197
+  F1-Score (Weighted): 0.3197
+  AUC-ROC: 0.8321
+
+CoCoOp: 50 epochs,lr=1e-3
+  Top-1 Accuracy: 0.2278
+  F1-Score (Macro): 0.1505
+  F1-Score (Weighted): 0.1505
+  AUC-ROC: 0.7921
+
+Maple:
+self.TRAINER = type('obj', (object,), {
+            'MAPLE': type('obj', (object,), {
+                'N_CTX': 2,
+                'CTX_INIT': '',
+                'PREC': 'fp32',  # Changed from 'amp' to 'fp32'
+                'PROMPT_DEPTH': 9
+            })()
+        })()
+self.OPTIM = type('obj', (object,), {
+            'NAME': 'sgd',
+            'LR': 0.001,
+            'WEIGHT_DECAY': 0.0005,
+            'MAX_EPOCH': 60,
+            'LR_SCHEDULER': 'cosine',
+            'WARMUP_EPOCH': 1,
+            'WARMUP_CONS_LR': 1e-5
+        })()
+Test Results:
+  Top-1 Accuracy: 0.6667
+  F1-Score (Macro): 0.6517
+  F1-Score (Weighted): 0.6517
+  AUC-ROC: 0.9449

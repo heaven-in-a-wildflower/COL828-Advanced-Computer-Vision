@@ -1,0 +1,14 @@
+ImageNet-21k Results:
+Test Accuracy: 93.78%
+Test F1-Score: 0.9371
+Test AUC-ROC: 0.9990
+
+CLIP Results:
+Test Accuracy: 63.11%
+Test F1-Score: 0.6335
+Test AUC-ROC: 0.9771
+
+DINOv2 Results:
+Test Accuracy: 88.89%
+Test F1-Score: 0.8882
+Test AUC-ROC: 0.9970

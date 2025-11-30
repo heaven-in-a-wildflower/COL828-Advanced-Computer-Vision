@@ -1,0 +1,25 @@
+args:
+- main.py
+- --log-file-path
+- ''
+model: llava-v1.5-7b
+benchmark: chair
+method: haltrapper
+start_time: '2025-11-22T18:15:43.442744+00:00'
+kwargs:
+  temperature: 0.0
+  max_new_tokens: 512
+  do_sample: false
+  num_beams: 1
+  repetition_penalty: 1.0
+  top_p: 1.0
+  cd_alpha: 1
+  cd_beta: 0.1
+  repeat: 1
+  repeat_mode: continuous
+  sep: ' '
+  cd_type: contrastive
+  candidates_number: 10
+  ee_threshold: -1.0
+  ig_threshold: 0.75
+  ig_strategy: cos_sim

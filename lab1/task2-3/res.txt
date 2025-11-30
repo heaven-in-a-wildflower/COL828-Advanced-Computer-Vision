@@ -1,0 +1,90 @@
+cocoop flat: 50 epochs, adamw, lr 1e-3
+  Top-1 Accuracy: 0.3733
+  Top-3 Accuracy: 0.6667
+  F1-Score (Macro): 0.3539
+  F1-Score (Weighted): 0.3539
+  AUC-ROC: 0.9259
+
+coop flat: 50 epochs, adamw, lr 1e-3
+  Top-1 Accuracy: 0.4667
+  Top-3 Accuracy: 0.6889
+  F1-Score (Macro): 0.4417
+  F1-Score (Weighted): 0.4417
+  AUC-ROC: 0.9338
+
+maple flat: 
+self.TRAINER = type('obj', (object,), {
+            'MAPLE': type('obj', (object,), {
+                'N_CTX': 10,
+                'CTX_INIT': '',
+                'PREC': 'fp32',
+                'PROMPT_DEPTH': 12
+            })()
+        })()
+        
+        self.OPTIM = type('obj', (object,), {
+            'NAME': 'adamw',
+            'LR': 0.00025,
+            'WEIGHT_DECAY': 0.0005,
+            'MAX_EPOCH': 50,
+            'LR_SCHEDULER': 'cosine',
+            'WARMUP_EPOCH': 1,
+            'WARMUP_CONS_LR': 1e-5
+        })()
+Test Results:
+  Top-1 Accuracy: 0.7511
+  Top-3 Accuracy: 0.9289
+  F1-Score (Macro): 0.7488
+  F1-Score (Weighted): 0.7488
+  AUC-ROC: 0.9876
+
+cocoop hier: 
+lr = 0.0005 if stage == 'manufacturer' else 0.00025, weight decay 1e-4
+num_epochs = 50 if stage == 'manufacturer' else 100
+  
+Stage 1 (Manufacturer-level) Test Results:
+  Top-1 Accuracy: 0.6578
+  Top-3 Accuracy: 0.9289
+  F1-Score (Macro): 0.6137
+  F1-Score (Weighted): 0.6542
+  AUC-ROC: 0.8986
+
+Stage 2 (Fine-grained) Test Results:
+  Top-1 Accuracy: 0.4133
+  Top-3 Accuracy: 0.6489
+  F1-Score (Macro): 0.4026
+  F1-Score (Weighted): 0.4026
+  AUC-ROC: 0.8947
+
+coop hier:
+lr = 0.001 if stage == 'manufacturer' else 0.0005,  weight decay 1e-4
+num_epochs = 50 if stage == 'manufacturer' else 100
+Stage 1 (Manufacturer-level) Test Results:
+  Top-1 Accuracy: 0.6578
+  Top-3 Accuracy: 0.9378
+  F1-Score (Macro): 0.5909
+  F1-Score (Weighted): 0.6467
+  AUC-ROC: 0.8876
+
+Stage 2 (Fine-grained) Test Results:
+  Top-1 Accuracy: 0.4267
+  Top-3 Accuracy: 0.6533
+  F1-Score (Macro): 0.4197
+  F1-Score (Weighted): 0.4197
+  AUC-ROC: 0.9265
+
+maple hier:
+Stage 1 (Manufacturer-level) Test Results:
+  Top-1 Accuracy: 0.8489
+  Top-3 Accuracy: 0.9822
+  F1-Score (Macro): 0.8414
+  F1-Score (Weighted): 0.8479
+  AUC-ROC: 0.9720
+
+Stage 2 (Fine-grained) Test Results:
+  Top-1 Accuracy: 0.7156
+  Top-3 Accuracy: 0.8978
+  F1-Score (Macro): 0.7126
+  F1-Score (Weighted): 0.7126
+  AUC-ROC: 0.9875
+

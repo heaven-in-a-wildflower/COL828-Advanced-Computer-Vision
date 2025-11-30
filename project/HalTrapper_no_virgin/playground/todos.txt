@@ -1,0 +1,7 @@
+* analysis of pai
+* study of params for virgin HalTrapper - effect of num_beams, cd_alpha and cd_beta
+* checking similarity of attention maps for hallucinated tokens
+* check if specific attention heads are responsible for hallucination
+* gdino analysis
+* Deficieny of CHAIR - black dress example - switching to amber for analysis
+* COCO vocabulary is not accurate. Objects prominently visible in images are not listed in the MSCOCO vocabulary.

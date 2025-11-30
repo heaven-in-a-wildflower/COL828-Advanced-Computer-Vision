@@ -1,0 +1,16 @@
+15 epochs, lr=2e-5, adamw, cosine-annealing
+
+ImageNet-21k Results:
+Test Accuracy: 85.56%
+Test F1-Score: 0.8479
+Test AUC-ROC: 0.9927
+
+CLIP Results:
+Test Accuracy: 87.22%
+Test F1-Score: 0.8629
+Test AUC-ROC: 0.9912
+
+DINOv2 Results:
+Test Accuracy: 82.78%
+Test F1-Score: 0.8112
+Test AUC-ROC: 0.9867

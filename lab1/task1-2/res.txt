@@ -1,0 +1,4 @@
+{'top1_accuracy': 0.1667, 
+'f1_macro': 0.0911, 
+'f1_weighted': 0.1004, 
+'auc_roc': 0.7543}
